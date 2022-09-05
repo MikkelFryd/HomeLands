@@ -1,0 +1,24 @@
+@import '../../../assets/scss/mixins.scss';
+@import '../../../assets/scss/vars.scss';
+
+
+section {
+    width: 90%;
+    margin: auto;
+    .sortcontainer {
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        h2 {
+            font-family: $font-family;
+        }
+        p {
+            font-family: $font-family;
+        }
+    }
+
+    .gridcontainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}

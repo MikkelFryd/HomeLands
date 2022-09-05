@@ -1,0 +1,33 @@
+
+
+.houseitem {
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: auto;
+    padding: 1rem;
+    img {
+        width: 100%;
+    }
+    figcaption {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .leftside {
+            margin: 0;
+           h5 {
+            margin: 0;
+            font-size: 1rem;
+           }
+           div {
+            margin: 0;
+            display: flex;
+            gap: 0.5rem;
+            .energylabel {
+                color: white;
+                background-color: green;
+                padding: 4px;
+            }
+           }
+        }
+    }
+}
