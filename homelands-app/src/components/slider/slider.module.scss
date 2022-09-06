@@ -1,0 +1,67 @@
+.desktop {
+    width: 100%;
+    z-index: -99;
+    transform: translateY(-50px);
+    animation-name: fadein;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+    animation-play-state: running;
+    img {
+        z-index: -99;
+        object-fit: cover;
+        width: 100%;
+        height: 60vh;
+        position: relative;
+    }
+
+}
+
+@keyframes fadein {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.mobile {
+    overflow: visible;
+    text-align: center;
+    div {
+        overflow: visible;
+    }
+    img {
+        width: 100%;
+    }
+
+}
+
+
+.carousel {
+    height: 50vh;
+    .buttonContainer{
+        display:flex;
+        justify-content: space-between;
+        transform: translateY(-350px);
+        .leftbutton {
+            z-index: 99;
+            background-image: url('../../assets/images/arrow-left.png');
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: invert(100%);
+            margin-left: 40px;
+        }
+        .rightbutton {
+            z-index: 99;
+            background-image: url('../../assets/images/arrow-right.png');
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: invert(100%);
+            margin-right: 40px;
+        }
+    }
+}

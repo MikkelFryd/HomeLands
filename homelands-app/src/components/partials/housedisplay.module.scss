@@ -1,0 +1,13 @@
+
+.displayhouses {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-content: center;
+
+    transform: translateY(-5vh);
+    align-items: center;
+    margin: auto;
+    z-index: 99;
+}

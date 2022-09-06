@@ -1,4 +1,5 @@
 import Style from './housinglistitem.module.scss'
+import HeartIcon from '../../../assets/images/heart-svg.svg'
 
 export const HousingListItem = props => {
 
@@ -10,22 +11,20 @@ export const HousingListItem = props => {
         <figure className={Style.houseitem}>
             <img src={props.data.images[0].filename.medium} alt="" />
             <figcaption>
-                <div className={Style.leftside}>
-                    <h5>{props.data.address}</h5>
                     <div>
-                        <p>{props.data.zipcode}</p>
-                        <p>{props.data.city}</p>
+                        <b>{props.data.address}</b>
+                        <img src={HeartIcon} alt="" />
                     </div>
-                    <p>{props.data.type}</p>
+                    <div className={Style.addressinfo}>
+                        <p>{props.data.zipcode} {props.data.city}</p>
+                        <p>{props.data.type}</p>
+                    </div>
                     <div>
                         <p className={Style.energylabel}>{props.data.energy_label_name}</p>
                         <p>{props.data.num_rooms} værelser, {props.data.floor_space}m&#178;</p>
+                        <h5>{handlePrice(props.data.price)} DKK</h5>
                     </div>
-                </div>
-                <div className={Style.rightside}>
-                    <p>heart icon</p>
-                    <h5>{handlePrice(props.data.price)} DKK</h5>
-                </div>
+             
             </figcaption>
         </figure>
     )

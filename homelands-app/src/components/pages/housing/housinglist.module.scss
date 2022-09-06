@@ -8,11 +8,15 @@ section {
     .sortcontainer {
         display: grid;
         grid-template-columns: 40% 30% 30%;
+        align-items: center;
         h2 {
-            font-family: $font-family;
+            font-family: $font-secondary;
         }
         p {
-            font-family: $font-family;
+            font-family: $font-secondary;
+        }
+        select {
+            height: 50%;
         }
     }
 

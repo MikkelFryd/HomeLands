@@ -5,7 +5,10 @@ nav {
     background-image: url("../../assets/images/navstuff.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: -30px;
     height: 10vh;
+    z-index: 2;
+    position: relative;
     .navcontainer {
         display: grid;
         grid-template-columns: 20% 80%;

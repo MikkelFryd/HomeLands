@@ -1,24 +1,13 @@
-import { useState, useEffect } from "react"
-import axios from 'axios'
+import { useState } from "react"
 import { Nav } from "../../partials/Nav"
 import { HousingListItem } from "./HousingListItem"
 import Style from './housinglist.module.scss'
+import { useHouse } from "../../context/houses/Housing"
 
 export const HousingList = () => {
-    const [housingData, setHousingData] = useState([])
+    const {housingData} = useHouse()
     const [type, setType] = useState("default")
 
-    const url = 'https://api.mediehuset.net/homelands/homes'
-
-    useEffect(() => {
-        const getHousingData = async () => {
-            const result = await axios.get(url)
-            setHousingData(result.data.items)
-        }
-        getHousingData()
-    }, [])
-
-    console.log(housingData)
 
     const handleChange = (e) => {
         setType(e.target.value)
@@ -43,7 +32,8 @@ export const HousingList = () => {
                 <article className={Style.gridcontainer}>
                 {housingData && housingData.map(housing => {
                     return (
-                        <HousingListItem key={housing.id} data={housing} />
+                        type === housing.type ?
+                        <HousingListItem key={housing.id} data={housing} /> : null
                     )
                 })}
                 </article>

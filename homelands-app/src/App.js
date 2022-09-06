@@ -3,14 +3,17 @@ import { BrowserRouter } from 'react-router-dom'
 import '../src/assets/scss/vars.scss'
 import './app.scss'
 import { AuthProvider } from './components/context/auth/Auth';
+import { HouseProvider } from './components/context/houses/Housing';
 
 function App() {
   return (
     <AuthProvider >
-      <BrowserRouter>
-        <AppRouter>
-        </AppRouter>
-      </BrowserRouter>
+      <HouseProvider>
+          <BrowserRouter>
+            <AppRouter>
+            </AppRouter>
+          </BrowserRouter>
+      </HouseProvider>
     </AuthProvider>
   );
 }
