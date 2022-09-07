@@ -1,4 +1,4 @@
-
+@import '../../assets/scss/vars.scss';
 
 footer {
     background-color: black;
@@ -8,7 +8,11 @@ footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
+    h2 {
+        font-size: 2rem;
+    }
     p {
+        font-family: $font-primary;
         font-weight: 300;
     }
 }

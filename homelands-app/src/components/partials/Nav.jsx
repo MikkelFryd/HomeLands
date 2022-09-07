@@ -7,12 +7,12 @@ export const Nav = () => {
         <nav className={Style.nav}>
             <div className={Style.navcontainer}>
                 <h1>HomeLands</h1>
-                <div>
+                <div className={Style.linkcontainer}>
                     <NavLink to="/">Forside</NavLink>
                     <NavLink to="/housing">Boliger til salg</NavLink>
                     <NavLink to="/login">Login</NavLink>
-                    <Search />
                 </div>
+                <Search />
             </div>
         </nav>
     )

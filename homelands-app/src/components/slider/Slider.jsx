@@ -60,7 +60,7 @@ export const Slider = () => {
     return (
         <div className={Style.carousel}>
         {carouselItems?.map((item, i) => { 
-            return index === i ? <Item alt={item.alt} url={item.url}/> : null
+            return index === i ? <Item alt={item.alt} key={i} url={item.url}/> : null
         })}
             <div className={Style.buttonContainer}>
                 <span className={Style.leftbutton} onClick={prev}></span>

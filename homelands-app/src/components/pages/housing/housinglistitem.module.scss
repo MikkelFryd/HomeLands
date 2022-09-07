@@ -2,32 +2,44 @@
 
 .houseitem {
     width: 90%;
-    box-shadow: 0px 0px 0px 2px rgba(3,3,3, 0.3);
+    box-shadow: 0px 0px 0px 2px rgba(83,83,83, 0.3);
     border-radius: 4px;
     margin: auto;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    a {
+        width: 100%;
+        height: 100%;
+    }
     img {
         width: 100%;
     }
     figcaption {
-           b {
+        b {
+            font-family: $font-primary;
             margin: 0;
-            font-size: $font-medium;
-            font-weight: 400;
+            font-weight: 600;
            }
            img {
-            width: 50%;
+            width: 75%;
            }
         div:nth-child(1){
             display: grid;
             grid-template-columns: 90% 10%;
             align-items: center;
             justify-content: center;
+            p {
+                font-family: $font-primary;
+            }
         }
         div:nth-child(2){
             line-height: 1px;
             font-size: $font-small;
+            p {
+                font-family: $font-primary;
+            }
         }
         div:nth-child(3) {
             display: grid;
@@ -36,12 +48,26 @@
             justify-content: center;
             gap: 1rem;
             align-items: center;
+            p {
+                font-family: $font-primary;
+                font-size: $font-small;
+            }
             .energylabel {
                 color: white;
                 background-color: green;
                 padding: 4px;
                 text-align: center;
             }
+            h5 {
+               font-family: $font-primary;
+            }
         }
     }
 }
+
+.houseitem:hover {
+    box-shadow: 0px 0px 0px 8px rgba(83,83,83, 0.4);
+    background-color: rgba(83, 83, 83, 0.4);
+    padding: 1.2rem;
+}
+

@@ -6,7 +6,7 @@ import { useHouse } from "../../context/houses/Housing"
 
 export const HousingList = () => {
     const {housingData} = useHouse()
-    const [type, setType] = useState("default")
+    const [type, setType] = useState("Villa")
 
 
     const handleChange = (e) => {
@@ -16,7 +16,7 @@ export const HousingList = () => {
     return (
         <>
             <Nav />
-            <section className={Style.section}>
+            <section>
                 <div className={Style.sortcontainer}>
                     <h2>Boliger til salg</h2>
                     <p>Sorter efter prisniveau</p>

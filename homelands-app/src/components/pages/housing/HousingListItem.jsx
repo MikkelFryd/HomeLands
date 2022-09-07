@@ -1,5 +1,7 @@
 import Style from './housinglistitem.module.scss'
 import HeartIcon from '../../../assets/images/heart-svg.svg'
+import { HousingDetails } from './HousingDetails'
+import { Link } from 'react-router-dom'
 
 export const HousingListItem = props => {
 
@@ -9,7 +11,9 @@ export const HousingListItem = props => {
 
     return (
         <figure className={Style.houseitem}>
+            <Link to={`/housing/${props.data.id}`}>
             <img src={props.data.images[0].filename.medium} alt="" />
+            </Link>
             <figcaption>
                     <div>
                         <b>{props.data.address}</b>
@@ -24,7 +28,6 @@ export const HousingListItem = props => {
                         <p>{props.data.num_rooms} værelser, {props.data.floor_space}m&#178;</p>
                         <h5>{handlePrice(props.data.price)} DKK</h5>
                     </div>
-             
             </figcaption>
         </figure>
     )

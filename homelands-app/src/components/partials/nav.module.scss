@@ -11,7 +11,7 @@ nav {
     position: relative;
     .navcontainer {
         display: grid;
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 20% 50% 30%;
         width: 80%;
         margin: auto;
         h1 {
@@ -21,11 +21,11 @@ nav {
             background-color: $color-brown;
             margin: auto;
             transform: translateY(1rem);
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 400;
             text-align: center;
         }
-        div {
+        .linkcontainer {
             display: flex;
             justify-content: flex-end;
             gap: 1rem;
@@ -34,6 +34,7 @@ nav {
             a {
                 color: white;
                 text-decoration: none;
+                font-size: 1.2rem;
             }
         }
 

@@ -1,12 +1,13 @@
-
+import Style from './search.module.scss'
+import SearchIcon from '@mui/icons-material/Search';
 
 export const Search = () => {
 
 
     return (
-        <div>
+        <div className={Style.searchcontainer}>
             <input placeholder="Indtast søgeord" type="text" />
-            <button>search icon</button>
+            <button><SearchIcon sx={{color: 'white'}}/></button>
         </div>
     )
 }

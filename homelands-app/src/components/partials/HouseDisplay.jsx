@@ -14,7 +14,7 @@ export const HouseDisplay = () => {
         <section className={Style.displayhouses}>
             {displayArr && displayArr.map((item) => {
                 return (
-                    <HousingListItem data={item} />
+                    <HousingListItem key={item.id} data={item} />
                 )
             })}
         </section>

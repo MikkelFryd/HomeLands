@@ -1,0 +1,87 @@
+@import '../../../assets/scss/vars.scss';
+
+.detailscontainer {
+    width: 100%;
+    .detailsheader {
+        width: 100%;
+        height: 40vh;
+        background-image: url('../../../assets/images/detailsbg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    figure {
+        width: 80%;
+        margin: auto;
+        padding: 1rem;
+        display: grid;
+        grid-row: 1fr 1fr 1fr;
+        background-color: rgba(255,255,255,0.8);
+        border-radius: 4px;
+        transform: translateY(-150px);
+        section {
+            display: grid;
+            grid-template-columns: 30% 40% 30%;
+            gap: 1rem;
+            justify-content: center;
+            .iconcontainer {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            div {
+                p {
+                    font-family: $font-primary;
+                }
+                h2 {
+                    font-family: $font-primary;
+                }
+                h3 {
+                    font-family: $font-primary;
+                }
+            }
+            div:nth-child(3) {
+                div {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        span {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            p {
+                font-family: $font-primary;
+            }
+            b {
+                font-family: $font-primary;
+            }
+        }
+        figcaption {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            justify-items: center;
+            align-items: center;
+            p {
+                font-family: $font-primary;
+                white-space: pre-line;
+            }
+           .staffcontainer {
+                text-align: center;
+                h2 {
+                    font-family: $font-primary;
+                }
+                h5 {
+                    font-family: $font-primary;
+                }
+                img {
+                    width: 50%;
+                }
+           }
+        }
+    }
+}

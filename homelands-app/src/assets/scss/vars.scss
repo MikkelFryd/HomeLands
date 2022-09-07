@@ -11,7 +11,18 @@
          url('../fonts/odibee-sans-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/odibee-sans-v14-latin-regular.svg#OdibeeSans') format('svg'); /* Legacy iOS */
   }
-  $font-primary: 'Trebuchet';
+
+  @font-face {
+    font-family: 'Trebuchet MS';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/trebuc.woff');
+    src: local(''),
+        url('../fonts/trebuc.woff') format('woff')
+    }
+
+
+  $font-primary: 'Trebuchet MS';
 
   $font-secondary: 'Odibee Sans';
 
