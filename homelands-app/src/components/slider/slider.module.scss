@@ -1,11 +1,10 @@
 .desktop {
     width: 100%;
     z-index: -99;
-    transform: translateY(-50px);
+    transform: translateY(-10vh);
     animation-name: fadein;
-    animation-duration: 0.3s;
+    animation-duration: 0.4s;
     animation-timing-function: ease-in-out;
-    animation-direction: normal;
     animation-play-state: running;
     img {
         z-index: -99;

@@ -1,0 +1,8 @@
+
+.staffcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 70%;
+    margin: auto;
+    gap: 1rem;
+}

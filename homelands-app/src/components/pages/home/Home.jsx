@@ -1,15 +1,19 @@
 import { Header } from "../../partials/Header"
 import { HouseDisplay } from "../../partials/HouseDisplay"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { useHouse } from "../../context/houses/Housing"
 import { Review } from "../../partials/Review"
 import { Footer } from "../../partials/Footer"
+import { Staff } from "../../partials/Staff"
+import { StaffContainer } from "../../partials/StaffContainer"
 
 
 export const Home = () => {
 
+
     const {housingData, setHousingData} = useHouse()
+    
     const url = 'https://api.mediehuset.net/homelands/homes'
 
     useEffect(() => {
@@ -20,13 +24,13 @@ export const Home = () => {
         getHousingData()
     }, [])
 
-    console.log(housingData)
 
     return (
         <>
             <Header />
             <HouseDisplay />
             <Review />
+            <StaffContainer />
             <Footer />
         </>
     )

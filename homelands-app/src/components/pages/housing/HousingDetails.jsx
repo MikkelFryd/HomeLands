@@ -8,9 +8,12 @@ import RoundedHeart from "../../../assets/images/rounded-heart.svg";
 import RoundedMap from "../../../assets/images/rounded-map.svg";
 import RoundedSquares from "../../../assets/images/rounded-squares.svg";
 import RoundedCamera from "../../../assets/images/rounded-camera.svg";
+import { Modal } from "../../partials/Modal";
 
 export const HousingDetails = () => {
   const [houseDetails, setHouseDetails] = useState({});
+  const [showModal, setShowModal] = useState(false)
+  const [modalContent, setModalContent] = useState()
 
   const { id } = useParams();
 
@@ -29,11 +32,23 @@ export const HousingDetails = () => {
     getHouseDetails();
   }, [id]);
 
+
+  function handleModal(value) {
+    if(showModal === false) {
+        setShowModal(true)
+        setModalContent(value)
+    } else {
+        setShowModal(false)
+    }
+  }
+
+  console.log(modalContent)
+
   console.log(houseDetails);
   return (
-    <>
+      <>
       {houseDetails.id ? (
-        <section className={Style.detailscontainer}>
+          <section className={Style.detailscontainer}>
           <header className={Style.detailsheader}>
             <Nav />
           </header>
@@ -45,16 +60,16 @@ export const HousingDetails = () => {
                   {houseDetails.zipcode} {houseDetails.city}
                 </p>
                 <p>
-                  {houseDetails.type} | {houseDetails.floor_space}m&#178; |{" "}
+                  {houseDetails.type} | {houseDetails.floor_space}m&#178; |
                   {houseDetails.num_rooms} vær
                 </p>
                 <p>Set {houseDetails.num_clicks} gange</p>
               </div>
               <div className={Style.iconcontainer}>
-                <img src={RoundedCamera} alt="" />
-                <img src={RoundedSquares} alt="" />
-                <img src={RoundedMap} alt="" />
-                <img src={RoundedHeart} alt="" />
+                <img onClick={() => handleModal(1)} src={RoundedCamera} alt="" />
+                <img onClick={() => handleModal(2)} src={RoundedSquares} alt="" />
+                <img onClick={() => handleModal(3)} src={RoundedMap} alt="" />
+                <img onClick={() => handleModal(4)} src={RoundedHeart} alt="" />
               </div>
               <div>
                 <div>
@@ -155,6 +170,7 @@ export const HousingDetails = () => {
             </figcaption>
           </figure>
           <Footer />
+          {showModal ? <Modal houseDetails = {houseDetails} modalContent = {modalContent} setShowModal={setShowModal}/> : null}
         </section>
       ) : null}
     </>
