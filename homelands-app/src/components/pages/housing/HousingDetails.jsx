@@ -12,15 +12,14 @@ import { Modal } from "../../partials/Modal";
 
 export const HousingDetails = () => {
   const [houseDetails, setHouseDetails] = useState({});
-  const [showModal, setShowModal] = useState(false)
-  const [modalContent, setModalContent] = useState()
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState();
 
   const { id } = useParams();
 
-
   function handlePrice(price) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-}
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   useEffect(() => {
     const getHouseDetails = async () => {
@@ -32,23 +31,19 @@ export const HousingDetails = () => {
     getHouseDetails();
   }, [id]);
 
-
   function handleModal(value) {
-    if(showModal === false) {
-        setShowModal(true)
-        setModalContent(value)
+    if (showModal === false) {
+      setShowModal(true);
+      setModalContent(value);
     } else {
-        setShowModal(false)
+      setShowModal(false);
     }
   }
 
-  console.log(modalContent)
-
-  console.log(houseDetails);
   return (
-      <>
+    <>
       {houseDetails.id ? (
-          <section className={Style.detailscontainer}>
+        <section className={Style.detailscontainer}>
           <header className={Style.detailsheader}>
             <Nav />
           </header>
@@ -66,15 +61,23 @@ export const HousingDetails = () => {
                 <p>Set {houseDetails.num_clicks} gange</p>
               </div>
               <div className={Style.iconcontainer}>
-                <img onClick={() => handleModal(1)} src={RoundedCamera} alt="" />
-                <img onClick={() => handleModal(2)} src={RoundedSquares} alt="" />
-                <img onClick={() => handleModal(3)} src={RoundedMap} alt="" />
-                <img onClick={() => handleModal(4)} src={RoundedHeart} alt="" />
+                <img
+                  onClick={() => handleModal(1)}
+                  src={RoundedCamera}
+                  alt="Images"
+                />
+                <img
+                  onClick={() => handleModal(2)}
+                  src={RoundedSquares}
+                  alt="Plan_image"
+                />
+                <img onClick={() => handleModal(3)} src={RoundedMap} alt="Google_map" />
+                <img onClick={() => handleModal(4)} src={RoundedHeart} alt="Heart" />
               </div>
               <div>
                 <div>
-                    <h3>Kontantpris</h3>
-                    <h2>{handlePrice(houseDetails.price)}</h2>
+                  <h3>Kontantpris</h3>
+                  <h2>{handlePrice(houseDetails.price)}</h2>
                 </div>
                 <p>Udbetaling {handlePrice(houseDetails.price)}</p>
                 <p>Ejerudgift per månded {handlePrice(houseDetails.cost)}</p>
@@ -170,7 +173,13 @@ export const HousingDetails = () => {
             </figcaption>
           </figure>
           <Footer />
-          {showModal ? <Modal houseDetails = {houseDetails} modalContent = {modalContent} setShowModal={setShowModal}/> : null}
+          {showModal ? (
+            <Modal
+              houseDetails={houseDetails}
+              modalContent={modalContent}
+              setShowModal={setShowModal}
+            />
+          ) : null}
         </section>
       ) : null}
     </>

@@ -14,21 +14,25 @@ export const Staff = (props) => {
   };
 
   return (
-    <figure style={{backgroundImage: "url(" + props.item.image + ")"}} className={Style.staffcard} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+    <figure
+      style={{ backgroundImage: "url(" + props.item.image + ")" }}
+      className={Style.staffcard}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
       <figcaption className={isHovering ? Style.hovered : Style.nothovered}>
-            <div className={Style.infobar}>
-            <h4>
+        <div className={Style.infobar}>
+          <h4>
             {props.item.firstname} {props.item.lastname}
-            </h4>
-            <p>{props.item.position}</p>
-            {isHovering ? 
+          </h4>
+          <p>{props.item.position}</p>
+          {isHovering ? (
             <>
-                <p>{props.item.email}</p>
-                <p>{props.item.phone}</p>
+              <p>{props.item.email}</p>
+              <p>{props.item.phone}</p>
             </>
-            : null}
-          </div>
-        
+          ) : null}
+        </div>
       </figcaption>
     </figure>
   );

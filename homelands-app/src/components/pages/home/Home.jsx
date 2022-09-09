@@ -1,11 +1,10 @@
 import { Header } from "../../partials/Header"
 import { HouseDisplay } from "../../partials/HouseDisplay"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import axios from "axios"
 import { useHouse } from "../../context/houses/Housing"
 import { Review } from "../../partials/Review"
 import { Footer } from "../../partials/Footer"
-import { Staff } from "../../partials/Staff"
 import { StaffContainer } from "../../partials/StaffContainer"
 
 
